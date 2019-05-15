@@ -11,17 +11,6 @@ cont_nn <- neuralnet(sepal_length ~ sepal_width + petal_length + petal_width,
                    linear.output = TRUE,
                    data=iris_train)
 
-ggplot() +
-  geom_point(aes(x=jitter(iris_train$sepal_length), 
-                 y=jitter(predict(cont_nn,
-                           newdata = iris_train,
-                           type="response"))),
-             color="darkorchid", alpha = 0.3) +
-  ggtitle("Neural Predicted Sepal Lengths - Training Set (Jittered)") +
-  xlab("Actual Sepal Length") +
-  ylab("Neural Predicted Sepal Length") +
-  theme_bw()
-
 linear_pred <- predict(l_mod,
                        newdata = iris_test,
                        type="response")
@@ -42,7 +31,20 @@ ggplot() +
   ylab("Predicted Sepal Length") +
   theme_bw()
 
-# WTF? I THOUGHT THIS WAS SUPPOSED TO WORK REALLY WELL!
+# WTF? I THOUGHT THIS WAS SUPPOSED TO WORK REALLY WELL!  Let's investigate:
+
+
+ggplot() +
+  geom_point(aes(x=jitter(iris_train$sepal_length), 
+                 y=jitter(predict(cont_nn,
+                                  newdata = iris_train,
+                                  type="response"))),
+             color="darkorchid", alpha = 0.3) +
+  ggtitle("Neural Predicted Sepal Lengths - Training Set (Jittered)") +
+  xlab("Actual Sepal Length") +
+  ylab("Neural Predicted Sepal Length") +
+  theme_bw()
+
 # Well, this is what's called "overfitting!" It's (one of) the dangers
 # of using a huge NN with very little training data. Let's try something 
 # a little smaller.
