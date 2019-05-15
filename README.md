@@ -1,13 +1,16 @@
-# nn_workshop
+# Introduction to Neural Networks Workshop
 
-Introduction to Neural Networks Workshop
-
-Wednesday, May 15, 2019
-
-3:30 - 4:30 PM
+Wednesday, May 15, 2019 - 3:30 - 4:30 PM
 
 Lemann Center @ CERAS
 
+
+To copy this directory, paste this into the command line:
+
+git clone https://github.com/klintkanopka/nn_workshop.git
+
+
+## File Inventory:
 - **main.R** - Organizing file, calls scripts in order.
 -	**required_packages.R** - List of required packages.
 - **import_iris_data.R** - Imports iris (yes, the flower) dataset.
