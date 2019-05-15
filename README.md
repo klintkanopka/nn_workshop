@@ -1,7 +1,11 @@
 # nn_workshop
+
 Introduction to Neural Networks Workshop
+
 Wednesday, May 15, 2019
+
 3:30 - 4:30 PM
+
 Lemann Center @ CERAS
 
 - **main.R** - Organizing file, calls scripts in order.
